@@ -1,0 +1,38 @@
+services:
+
+
+  db:
+    image: postgres:14
+    container_name: postgresql_db
+    restart: always
+    environment:
+      POSTGRES_DB: tuplaylist_db
+      POSTGRES_USER: tucoopproject
+      POSTGRES_PASSWORD: tuvarna
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+
+  pgadmin:
+    image: dpage/pgadmin4
+    container_name: pgadmin
+    restart: always
+    environment:
+      PGADMIN_DEFAULT_EMAIL: tuvarnasit2025k3@admin.com
+      PGADMIN_DEFAULT_PASSWORD: tuvarna
+    ports:
+      - "8080:80"
+    depends_on:
+      - db
+    volumes:
+      - pgadmin_data:/var/lib/pgadmin
+
+
+
+
+volumes:
+  postgres_data:
+  pgadmin_data:
+
