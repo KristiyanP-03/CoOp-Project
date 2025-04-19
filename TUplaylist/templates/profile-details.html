@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block content %}
+    {% load static %}
+
+            <img src="
+                {% if profile.profile_picture %}
+                    {{ profile.profile_picture }}
+                {% else %}
+                    {% static ""  %}
+                {% endif %}">
+
+
+
+            {{ profile.username }}
+            {% if profile.first_name or profile.last_name %}
+                Name: {{ profile.first_name }} {{ profile.last_name }}
+            {% endif %}
+            Email: {{ profile.email }}
+
+                {% if profile.bio %}
+                    <p><b>Bio:</b> {{ profile.bio }}</p>
+                {% endif %}
+
+
+        <a class="logout-button" href="{% url 'logout' %}">Log Out</a>
+        <a class="edit-button" href="{% url 'profile edit' %}">Edit</a>
+        <a class="delete-button" href="{% url 'profile delete' %}">Delete Profile</a>
+
+
+
+{% endblock %}

@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block content %}
+
+{% load static %}
+
+    Register Profile
+    <form method="post">
+
+        {% csrf_token %}
+        {{ form.username.label_tag }} {{ form.username }}
+        {{ form.password.label_tag }} {{ form.password }}
+        {{ form.repeat_password.label_tag }} {{ form.repeat_password }}
+        {{ form.email.label_tag }} {{ form.email }}
+        {{ form.errors }}
+        <div class="checkbox-label">
+             {{ form.agree_privacy.label_tag }}{{ form.agree_privacy }}
+        </div>
+        <div class="checkbox-label">
+             {{ form.agree_show_profile.label_tag }}{{ form.agree_show_profile }}
+        </div>
+        <div class="checkbox-label">
+             {{ form.agree_rules.label_tag }}{{ form.agree_rules }}
+        </div>
+
+
+
+        <button type="submit">Register</button>
+        Already have an account? <a href="{% url "login" %}">Log in</a>
+    </form>
+
+{% endblock %}

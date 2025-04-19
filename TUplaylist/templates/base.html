@@ -1,0 +1,31 @@
+{% load static %}
+<html lang="en">
+    <head>
+        <title></title>
+    </head>
+
+    <body>
+
+        <nav>
+            <ul>
+                    <li><a href="{% url "home" %}">Home</a></li>
+                {% if user.is_authenticated %}
+                    <li><a href="{% url "profile details" %}">Profile</a></li>
+                    <li><a href="{% url "user songs" %}">My Songs</a></li>
+                {% else %}
+                    <li><a href="{% url "register" %}">Register</a></li>
+                    <li><a href="{% url "login" %}">Log in</a></li>
+                {% endif %}
+            </ul>
+        </nav>
+
+        {% block content %}
+        {% endblock %}
+
+        <footer>
+
+            <p>&copy; 2025 TUplaylist. All rights reserved.</p>
+        </footer>
+    </body>
+
+</html>
