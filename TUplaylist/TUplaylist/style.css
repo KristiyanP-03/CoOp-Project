@@ -614,3 +614,261 @@ body {
 .edit-link:hover, .delete-link:hover {
     text-decoration: underline;
 }
+.add-song-link {
+    display: inline-block;
+    background-color: #50c878; 
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+    padding: 10px 15px;
+    border-radius: 50%;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.add-song-link:hover {
+    background-color: #43b563; 
+}
+
+p {
+    font-size: 16px;
+    color: #555;
+    text-align: center;
+}
+
+.create-song-container {
+    width: 100%;
+    max-width: 600px;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.create-song-container h2 {
+    font-size: 28px;
+    color: #2d658c; /* Main brand color */
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.create-song-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.create-song-form p {
+    font-size: 16px;
+    color: #333;
+}
+
+.create-song-button {
+    background-color: #50c878; 
+    color: white;
+    font-size: 16px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 20px;
+    align-self: center;
+}
+
+.create-song-button:hover {
+    background-color: #43b563; 
+}
+
+.create-song-form input, .create-song-form select {
+    padding: 10px;
+    font-size: 14px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+.create-song-form input:focus, .create-song-form select:focus {
+    border-color: #2d658c; 
+    outline: none;
+}
+
+.song-details-container {
+    width: 100%;
+    max-width: 700px;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.song-details-container h2 {
+    font-size: 32px;
+    color: #2d658c; 
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.song-details-container p {
+    font-size: 16px;
+    color: #333;
+    margin: 10px 0;
+}
+
+.song-cover {
+    max-width: 300px;
+    display: block;
+    margin-top: 20px;
+    border-radius: 8px;
+}
+
+.buttons {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.btn-edit, .btn-delete {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 5px;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 16px;
+    text-decoration: none;
+}
+
+.btn-edit {
+    background-color: #50c878; 
+    color: white;
+}
+
+.btn-edit:hover {
+    background-color: #43b563; 
+}
+
+.btn-delete {
+    background-color: #ff6b6b; 
+    color: white;
+}
+
+.btn-delete:hover {
+    background-color: #e05b5b; 
+}
+
+.edit-song-container {
+    width: 100%;
+    max-width: 700px;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.edit-song-container h2 {
+    font-size: 32px;
+    color: #2d658c; 
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+form {
+    margin-top: 20px;
+}
+
+form p {
+    margin-bottom: 15px;
+}
+
+.form-buttons {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.btn-save {
+    background-color: #50c878; 
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-save:hover {
+    background-color: #43b563; 
+}
+
+.btn-cancel {
+    background-color: #ff6b6b; 
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-left: 10px;
+}
+
+.btn-cancel:hover {
+    background-color: #e05b5b; 
+}
+
+.delete-song-container {
+    width: 100%;
+    max-width: 700px;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.delete-song-container h2 {
+    font-size: 32px;
+    color: #2d658c;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.delete-song-container p {
+    font-size: 18px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+form {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.form-buttons {
+    margin-top: 30px;
+}
+
+.btn-confirm-delete {
+    background-color: #ff6b6b; 
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-confirm-delete:hover {
+    background-color: #e05b5b; 
+}
+
+.btn-cancel {
+    background-color: #50c878; 
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-left: 10px;
+}
+
+.btn-cancel:hover {
+    background-color: #43b563; 
+}
