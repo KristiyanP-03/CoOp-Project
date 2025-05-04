@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TUplaylist</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav>
+        <div class="nav-left">
+            <ul>
+                <li><a href="index.html"><img src="logoPNG.png" alt="Logo" class="logo"></a></li>
+                <li><a href="index.html">TUplaylist</a></li>
+            </ul>
+        </div>
+        <div class="nav-right">
+            <ul>
+                <li><a href="profile-details.html">Profile</a></li>
+                <li><a href="user-songs.html">My Songs</a></li>
+                <li><a href="register.html">Register</a></li>
+                <li><a href="login.html">Log in</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <div class="register-container">
+            <h2>Register Profile</h2>
+
+            <!-- Registration Form -->
+            <form method="post" class="register-form">
+                <!-- Username Field -->
+                <div class="form-group">
+                    <label for="username">Username:</label>
+                    <input type="text" id="username" name="username" required>
+                </div>
+
+                <!-- Password Field -->
+                <div class="form-group">
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+
+                <!-- Repeat Password Field -->
+                <div class="form-group">
+                    <label for="repeat_password">Repeat Password:</label>
+                    <input type="password" id="repeat_password" name="repeat_password" required>
+                </div>
+
+                <!-- Email Field -->
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+
+                <!-- Error Messages -->
+                <div class="form-errors">
+                    <!-- Error messages can be inserted here if needed -->
+                </div>
+
+                <!-- Privacy Agreement Checkbox -->
+                <div class="checkbox-group">
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="agree_privacy" name="agree_privacy" required>
+                        I agree to the privacy policy
+                    </label>
+                </div>
+
+                <!-- Show Profile Checkbox -->
+                <div class="checkbox-group">
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="agree_show_profile" name="agree_show_profile">
+                        I agree to show my profile publicly
+                    </label>
+                </div>
+
+                <!-- Rules Agreement Checkbox -->
+                <div class="checkbox-group">
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="agree_rules" name="agree_rules" required>
+                        I agree to the terms and conditions
+                    </label>
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submit" class="register-button">Register</button>
+
+                <!-- Login Link -->
+                <p>Already have an account? <a href="login.html" class="login-link">Log in</a></p>
+            </form>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 TUplaylist. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
