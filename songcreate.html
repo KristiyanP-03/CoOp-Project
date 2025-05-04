@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TUplaylist</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav>
+        <div class="nav-left">
+            <ul>
+                <li><a href="index.html"><img src="logoPNG.png" alt="Logo" class="logo"></a></li>
+                <li><a href="index.html">TUplaylist</a></li>
+            </ul>
+        </div>
+        <div class="nav-right">
+            <ul>
+                <li><a href="profile-details.html">Profile</a></li>
+                <li><a href="user-songs.html">My Songs</a></li>
+                <li><a href="register.html">Register</a></li>
+                <li><a href="login.html">Log in</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <div class="create-song-container">
+            <h2>Create Song</h2>
+
+            <!-- Create Song Form -->
+            <form method="post" class="create-song-form">
+                <!-- Song Title Field -->
+                <div class="form-group">
+                    <label for="song_title">Song Title:</label>
+                    <input type="text" id="song_title" name="song_title" required>
+                </div>
+
+                <!-- Song Artist Field -->
+                <div class="form-group">
+                    <label for="song_artist">Artist:</label>
+                    <input type="text" id="song_artist" name="song_artist" required>
+                </div>
+
+                <!-- Song Genre Field -->
+                <div class="form-group">
+                    <label for="song_genre">Genre:</label>
+                    <input type="text" id="song_genre" name="song_genre" required>
+                </div>
+
+                <!-- Song File Upload Field -->
+                <div class="form-group">
+                    <label for="song_file">Upload Song:</label>
+                    <input type="file" id="song_file" name="song_file" accept="audio/*" required>
+                </div>
+
+                <!-- Song Description Field -->
+                <div class="form-group">
+                    <label for="song_description">Description:</label>
+                    <textarea id="song_description" name="song_description" rows="4" required></textarea>
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submit" class="create-song-button">Create</button>
+            </form>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 TUplaylist. All rights reserved.</p>
+    </footer>
+</body>
+</html>
+
