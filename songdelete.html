@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TUplaylist</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav>
+        <div class="nav-left">
+            <ul>
+                <li><a href="index.html"><img src="logoPNG.png" alt="Logo" class="logo"></a></li>
+                <li><a href="index.html">TUplaylist</a></li>
+            </ul>
+        </div>
+        <div class="nav-right">
+            <ul>
+                <li><a href="profile-details.html">Profile</a></li>
+                <li><a href="user-songs.html">My Songs</a></li>
+                <li><a href="register.html">Register</a></li>
+                <li><a href="login.html">Log in</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <div class="delete-song-container">
+            <h2>Delete Song</h2>
+            <p>Are you sure you want to delete the song "<strong>Song Title</strong>"?</p>
+
+            <form method="post">
+                <!-- CSRF Token Placeholder (if needed for security) -->
+                <input type="hidden" name="csrf_token" value="your_csrf_token_here">
+                
+                <div class="form-buttons">
+                    <!-- Confirm Delete Button -->
+                    <button type="submit" class="btn-confirm-delete">Confirm Delete</button>
+
+                    <!-- Cancel Link -->
+                    <a href="song-details.html" class="btn-cancel">Cancel</a>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 TUplaylist. All rights reserved.</p>
+    </footer>
+</body>
+</html>
+
