@@ -1,20 +1,24 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <h2>My Songs</h2>
+    <div class="my-songs-container">
+        <h2>My Songs</h2>
 
-    {% if songs %}
-        <ul>
-            {% for song in songs %}
-                <li>
-                    <a href="{% url 'song details' song.pk %}">{{ song.title }}</a> by {{ song.artist }}
-                    (<a href="{% url 'song edit' song.pk %}">Edit</a> |
-                     <a href="{% url 'song delete' song.pk %}">Delete</a>)
-                </li>
-            {% endfor %}
-        </ul>
-    {% else %}
-        <p>You haven't uploaded any songs yet.</p>
-    {% endif %}
-    <li><a href="{% url "song create" %}">+</a></li>
+        {% if songs %}
+            <ul class="song-list">
+                {% for song in songs %}
+                    <li class="song-item">
+                        <a href="{% url 'song details' song.pk %}" class="song-title">{{ song.title }}</a> 
+                        by {{ song.artist }}
+                        (<a href="{% url 'song edit' song.pk %}" class="edit-link">Edit</a> | 
+                         <a href="{% url 'song delete' song.pk %}" class="delete-link">Delete</a>)
+                    </li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>You haven't uploaded any songs yet.</p>
+        {% endif %}
+        
+        <a href="{% url 'song create' %}" class="add-song-link">+</a>
+    </div>
 {% endblock %}

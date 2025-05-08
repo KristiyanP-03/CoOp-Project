@@ -2,60 +2,68 @@
 
 {% block content %}
 
-<h2>Welcome</h2>
+<div class="home-flex-container">
 
-<!-- Filter Form -->
-<form method="get" class="filter-form">
-    <label for="genre">Genre:</label>
-    <select name="genre" id="genre">
-        <option value="">All Genres</option>
-        {% for genre_code, genre_name in genres %}
-            <option value="{{ genre_code }}" {% if genre_code == request.GET.genre %}selected{% endif %}>{{ genre_name }}</option>
-        {% endfor %}
-    </select>
+    <!-- Filter Sidebar -->
+    <div class="filter-sidebar">
+        <form method="get" class="filter-form">
+            <label for="genre">Genre:</label>
+            <select name="genre" id="genre">
+                <option value="">All Genres</option>
+                {% for genre_code, genre_name in genres %}
+                    <option value="{{ genre_code }}" {% if genre_code == request.GET.genre %}selected{% endif %}>
+                        {{ genre_name }}
+                    </option>
+                {% endfor %}
+            </select>
 
-    <label for="year">Release Year:</label>
-    <input type="number" name="year" id="year" value="{{ request.GET.year }}" placeholder="Enter Year">
+            <label for="year">Release Year:</label>
+            <input type="number" name="year" id="year" value="{{ request.GET.year }}" placeholder="Enter Year">
 
-    <label for="artist_type">Artist/Band:</label>
-    <select name="artist_type" id="artist_type">
-        <option value="">Any</option>
-        {% for type_code, type_name in artist_types %}
-            <option value="{{ type_code }}" {% if type_code == request.GET.artist_type %}selected{% endif %}>{{ type_name }}</option>
-        {% endfor %}
-    </select>
+            <label for="artist_type">Artist/Band:</label>
+            <select name="artist_type" id="artist_type">
+                <option value="">Any</option>
+                {% for type_code, type_name in artist_types %}
+                    <option value="{{ type_code }}" {% if type_code == request.GET.artist_type %}selected{% endif %}>
+                        {{ type_name }}
+                    </option>
+                {% endfor %}
+            </select>
 
-    <label for="uploader">Uploader:</label>
-    <input type="text" name="uploader" id="uploader" value="{{ request.GET.uploader }}" placeholder="Enter Uploader's Username">
+            <label for="uploader">Uploader:</label>
+            <input type="text" name="uploader" id="uploader" value="{{ request.GET.uploader }}" placeholder="Enter Uploader's Username">
 
-    <button type="submit">Filter</button>
-</form>
+            <button type="submit" class="filter-button">Filter</button>
+        </form>
+    </div>
 
-<div class="user_songs_container">
-    {% if songs %}
-        <div class="song_boxes">
-            {% for song in songs reversed %}
-                <div class="song_box">
-                    <p><strong>Song Name:</strong> {{ song.title }}</p>
-                    <p><strong>Artist / Band Name:</strong> {{ song.artist }}</p>
+    <!-- Songs List -->
+    <div class="user_songs_container">
+        {% if songs %}
+            <div class="song_boxes">
+                {% for song in songs reversed %}
+                    <div class="song_box">
+                        <p><strong>Song Name:</strong> {{ song.title }}</p>
+                        <p><strong>Artist / Band Name:</strong> {{ song.artist }}</p>
 
-                    {% if song.cover %}
-                        <p><strong>Cover Image:</strong></p>
-                        <img src="{{ song.cover }}" alt="Cover Image" style="max-width: 200px;">
-                    {% endif %}
+                        {% if song.cover %}
+                            <img class="cover_image" src="{{ song.cover }}" alt="Cover Image">
+                        {% endif %}
 
-                    <p><strong>Genre:</strong> {{ song.get_genre_display }}</p>
-                    <p><strong>Release Year:</strong> {{ song.release_year }}</p>
-                    <p><strong>Duration:</strong> {{ song.duration }}</p>
-                    <p><strong>Uploaded By:</strong> {{ song.uploader.username }}</p>
+                        <p><strong>Genre:</strong> {{ song.get_genre_display }}</p>
+                        <p><strong>Release Year:</strong> {{ song.release_year }}</p>
+                        <p><strong>Duration:</strong> {{ song.duration }}</p>
+                        <p><strong>Uploaded By:</strong> {{ song.uploader.username }}</p>
 
-                    <a href="{% url 'song details' song.pk %}" class="details_button">Details</a>
-                </div>
-            {% endfor %}
-        </div>
-    {% else %}
-        <p>No songs have been created yet or no songs match your filters.</p>
-    {% endif %}
+                        <a href="{% url 'song details' song.pk %}" class="details_button">Details</a>
+                    </div>
+                {% endfor %}
+            </div>
+        {% else %}
+            <p>No songs have been created yet or no songs match your filters.</p>
+        {% endif %}
+    </div>
+
 </div>
 
 {% endblock %}

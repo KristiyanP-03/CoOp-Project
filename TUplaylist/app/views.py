@@ -23,27 +23,27 @@ from .models import *
 def home(request):
     songs = SongModel.objects.all()
 
-    # Genre Filter
+
     genre = request.GET.get('genre', None)
     if genre:
         songs = songs.filter(genre=genre)
 
-    # Release Year Filter
+
     year = request.GET.get('year', None)
     if year:
         songs = songs.filter(release_year=year)
 
-    # Artist/Band Type Filter
+
     artist_type = request.GET.get('artist_type', None)
     if artist_type:
         songs = songs.filter(artist_type=artist_type)
 
-    # Uploader Filter
+
     uploader = request.GET.get('uploader', None)
     if uploader:
         songs = songs.filter(uploader__username=uploader)
 
-    # Prepare genre and artist_type choices for dropdowns
+
     genres = SongModel.GENRE_CHOICES
     artist_types = SongModel.ARTIST_TYPE_CHOICES
 

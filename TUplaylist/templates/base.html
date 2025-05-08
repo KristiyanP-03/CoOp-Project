@@ -1,31 +1,37 @@
 {% load static %}
+<!DOCTYPE html>
 <html lang="en">
-    <head>
-        <title></title>
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <title>TUplaylist</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
 
-    <body>
+    <nav>
+        <ul>
+            <li><a href="{% url 'home' %}"><img src="{% static 'imgs/logoPNG.png' %}" alt="Logo" class="logo"></a></li>
+            <li><a href="{% url 'home' %}">TUplaylist</a></li>
+            {% if user.is_authenticated %}
+                <li><a href="{% url 'profile details' %}">Profile</a></li>
+                <li><a href="{% url 'user songs' %}">My Songs</a></li>
+            {% else %}
+                <li><a href="{% url 'register' %}">Register</a></li>
+                <li><a href="{% url 'login' %}">Log in</a></li>
+            {% endif %}
+        </ul>
+    </nav>
 
-        <nav>
-            <ul>
-                    <li><a href="{% url "home" %}">Home</a></li>
-                {% if user.is_authenticated %}
-                    <li><a href="{% url "profile details" %}">Profile</a></li>
-                    <li><a href="{% url "user songs" %}">My Songs</a></li>
-                {% else %}
-                    <li><a href="{% url "register" %}">Register</a></li>
-                    <li><a href="{% url "login" %}">Log in</a></li>
-                {% endif %}
-            </ul>
-        </nav>
 
+    <main>
         {% block content %}
         {% endblock %}
+    </main>
 
-        <footer>
 
-            <p>&copy; 2025 TUplaylist. All rights reserved.</p>
-        </footer>
-    </body>
+    <footer>
+        <p>&copy; 2025 TUplaylist. All rights reserved.</p>
+    </footer>
 
+</body>
 </html>

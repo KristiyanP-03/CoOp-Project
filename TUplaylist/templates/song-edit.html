@@ -1,10 +1,19 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <h2>Edit Song</h2>
-    <form method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Save</button>
-    </form>
+    <div class="edit-song-container">
+        <h2>Edit Song</h2>
+
+        <form method="post">
+            {% csrf_token %}
+            <div class="form-group">
+                {{ form.as_p }}
+            </div>
+
+            <div class="form-actions">
+                <button type="submit" class="btn-save">Save Changes</button>
+                <a href="{% url 'home' %}" class="btn-cancel">Cancel</a>
+            </div>
+        </form>
+    </div>
 {% endblock %}

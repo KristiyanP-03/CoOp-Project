@@ -1,31 +1,65 @@
 {% extends "base.html" %}
 {% block content %}
 
-{% load static %}
+    <div class="register-container">
+        <h2>Register Profile</h2>
 
-    Register Profile
-    <form method="post">
+        <!-- Registration Form -->
+        <form method="post" class="register-form">
+            {% csrf_token %}
 
-        {% csrf_token %}
-        {{ form.username.label_tag }} {{ form.username }}
-        {{ form.password.label_tag }} {{ form.password }}
-        {{ form.repeat_password.label_tag }} {{ form.repeat_password }}
-        {{ form.email.label_tag }} {{ form.email }}
-        {{ form.errors }}
-        <div class="checkbox-label">
-             {{ form.agree_privacy.label_tag }}{{ form.agree_privacy }}
-        </div>
-        <div class="checkbox-label">
-             {{ form.agree_show_profile.label_tag }}{{ form.agree_show_profile }}
-        </div>
-        <div class="checkbox-label">
-             {{ form.agree_rules.label_tag }}{{ form.agree_rules }}
-        </div>
+            <!-- Username Field -->
+            <div class="form-group">
+                {{ form.username.label_tag }} {{ form.username }}
+            </div>
 
+            <!-- Password Field -->
+            <div class="form-group">
+                {{ form.password.label_tag }} {{ form.password }}
+            </div>
 
+            <!-- Repeat Password Field -->
+            <div class="form-group">
+                {{ form.repeat_password.label_tag }} {{ form.repeat_password }}
+            </div>
 
-        <button type="submit">Register</button>
-        Already have an account? <a href="{% url "login" %}">Log in</a>
-    </form>
+            <!-- Email Field -->
+            <div class="form-group">
+                {{ form.email.label_tag }} {{ form.email }}
+            </div>
+
+            <!-- Error Messages -->
+            <div class="form-errors">
+                {{ form.errors }}
+            </div>
+
+            <!-- Privacy Agreement Checkbox -->
+            <div class="checkbox-group">
+                <label class="checkbox-label">
+                    {{ form.agree_privacy.label_tag }} {{ form.agree_privacy }}
+                </label>
+            </div>
+
+            <!-- Show Profile Checkbox -->
+            <div class="checkbox-group">
+                <label class="checkbox-label">
+                    {{ form.agree_show_profile.label_tag }} {{ form.agree_show_profile }}
+                </label>
+            </div>
+
+            <!-- Rules Agreement Checkbox -->
+            <div class="checkbox-group">
+                <label class="checkbox-label">
+                    {{ form.agree_rules.label_tag }} {{ form.agree_rules }}
+                </label>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit" class="register-button">Register</button>
+
+            <!-- Login Link -->
+            <p>Already have an account? <a href="{% url 'login' %}" class="login-link">Log in</a></p>
+        </form>
+    </div>
 
 {% endblock %}
